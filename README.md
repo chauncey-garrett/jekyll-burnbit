@@ -1,29 +1,25 @@
 # jekyll-burnbit
 
-A Jekyll plugin featuring Burnbit integration
+A Jekyll plugin featuring Burnbit integration so that downloads look like so:
+
+![](http://static.burnbit.com/images/button/samplecompact.png)
+
 
 # Usage
 
 ```liquid
-{% torrent url style %}
+{% torrent url %}
 ```
 
-- `torrent` is the tag.
-- `url` is the url of the desired file.
-- `style` is one of `normal`, `compact`, or `custom`
+### URLs
 
-![normal](normal.png)
-![compact](compact.png)
+If you have a file with mirrors, you may separate them with `|`. *e.g.,*
 
-## URLs
+```liquid
+{% torrent http://burnbit.com/file.exe|http://us1.mirror.foo.com/file.exe %}
+```
 
-If you have a file with mirrors, you may separate them with `|`. *e.g.,* `{% torrent http://burnbit.com/file.exe|http://us1.mirror.foo.com/file.exe normal %}
-
-## Custom styling
-
-If you want to use a custom style, include the example `CSS` file in `<head>`.
-
-## JS
+### JS
 
 Reference the required JS at the end of `<body>` in your HTML.
 
@@ -33,11 +29,16 @@ Reference the required JS at the end of `<body>` in your HTML.
 
 # Installation
 
-Add `burnbit.rb` to `_plugins` and call it in `_config.yml`:
+Add `burnbit.rb` to `_plugins`. Be sure to reference both the JS file, as mentioned above.
 
-```yml
-gems:
-  - burnbit
-```
+# Like it?
 
-If you are using a custom style, add `burnbit.css` to your `CSS` folder. Be sure to reference both the CSS and JS files as mentioned above.
+If you have feature suggestions, please open an [issue](https://github.com/chauncey-garrett/jekyll-burnbit/issues "chauncey-garrett/jekyll-burnbit/issues"). If you have contributions, open a [pull request](https://github.com/chauncey-garrett/jekyll-burnbit/pulls "chauncey-garrett/jekyll-burnbit/pulls"). I'd love to add support for the normal and custom styles (which did not initially work for me).
+
+# Author(s)
+
+*The author(s) of this module should be contacted via the [issue tracker](https://github.com/chauncey-garrett/jekyll-burnbit/issues "chauncey-garrett/jekyll-burnbit/issues").*
+
+  - [Chauncey Garrett](https://github.com/chauncey-garrett "chauncey-garrett")
+
+[![](/img/tip.gif)](http://chauncey.io/reader-support/)
